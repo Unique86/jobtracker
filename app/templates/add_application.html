@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Add Job</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+<nav class="navbar">
+
+    <div class="logo">
+        <a href="/">🧳 Job Tracker</a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/add">Add Application</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+
+</nav>
+
+<main class="hero">
+
+    <h1>Add Job Application</h1>
+
+    <form action="/add" method="post">
+
+       <div class="form-group">
+
+           <label for="company">
+             Company
+           </label>
+
+           <input
+                 id="company"
+                 type="text"
+                 name="company"
+                 required>
+
+        </div>
+
+        <br><br>
+
+        <div class="form-group">
+            <label for="Position">
+                Position
+            </label>
+
+        <input
+            type="text"
+            name="position"
+            required>
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label for="Location">
+                Location
+            </label>
+
+        <input
+            type="text"
+            name="location"
+            required>
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label for="Status"></label>
+
+        <select name="status">
+
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+
+        </select>
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label for="Notes">
+                Notes
+            </label>
+
+        <textarea
+            name="notes"
+            rows="6"></textarea>
+        </div>
+        <br><br>
+
+        <button
+             type="submit"
+             class="primary-button">
+
+             Save Changes
+
+        </button>
+
+    </form>
+
+</main>
+
+</body>
+
+</html>

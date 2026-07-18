@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Add Job</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        <a href="/">🧳 Job Tracker</a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/add">Add Application</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+
+</nav>
+
+<main class="hero">
+
+    <h1>Add Job Application</h1>
+
+    <form action="/edit/{{ application.id }}" method="post">
+
+       <div class="form-group">
+
+           <label for="company">
+             Company
+           </label>
+
+           <input
+                 id="company"
+                 type="text"
+                 name="company"
+                 value="{{ application.company }}"
+                 required>
+
+        </div>
+
+        <br><br>
+
+        <div class="form-group">
+            <label for="position">
+                Posistion
+            </label>
+
+        <input
+            type="text"
+            name="position"
+            value="{{application.position}}"
+            required>
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label for="Location">
+                Location
+            </label>
+
+        <input
+            type="text"
+            name="location"
+            value="{{application.location}}"
+            required>
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label for="Status">
+                Status
+            </label>
+
+
+           <select name="status">
+
+              <option
+                  value="Applied"
+                  {% if application.status == "Applied" %}selected{% endif %}>
+                  Applied
+            </option>
+
+              <option
+                  value="Interview"
+                  {% if application.status == "Interview" %}selected{% endif %}>
+                  Interview
+              </option>
+
+              <option
+                  value="Offer"
+                  {% if application.status == "Offer" %}selected{% endif %}>
+                  Offer
+              </option>
+
+              <option
+                  value="Rejected"
+                  {% if application.status == "Rejected" %}selected{% endif %}>
+                  Rejected
+              </option>
+
+       </select>
+     </div>
+        
+
+        <br><br>
+
+        <div class="form-group">
+            <label for="Notes">
+                Notes
+            </label>
+
+        <textarea
+            name="notes"
+            rows="6">{{ application.notes }}
+        </textarea>
+        </div>
+        <br><br>
+        <button
+            type="submit"
+            class="primary-button">
+
+            Save Changes
+
+        </button>
+
+    </form>
+
+</main>
+
+</body>
+
+</html>

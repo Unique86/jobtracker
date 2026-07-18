@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+
+    <div class="logo">
+        <a href="/">🧳 Job Tracker</a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/add">Add Application</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+
+  </nav>
+
+
+<div class="dashboard-header">
+
+    <div>
+
+        <h1>📋 Job Applications</h1>
+
+        <p>Track every opportunity. Stay organized.</p>
+
+    </div>
+
+    <a href="/add" class="add-button">
+        + Add Application
+    </a>
+
+</div>
+
+<div class="applications-container">
+
+{% for application in applications %}
+
+<div class="application-card">
+
+    <h2>{{ application.company }}</h2>
+
+    <h3>{{ application.position }}</h3>
+
+    <p class="card-detail">
+    📍 {{ application.location }}
+    </p>
+
+    <p class="card-detail">
+    <span class="status status-{{ application.status|lower|replace(' ', '-') }}">
+    {{ application.status }}
+    </span>
+    </p>
+
+    <p class="card-detail">
+    📅 {{ application.date_applied.strftime("%b %d, %Y") }}
+    </p>
+
+
+<div class="card-actions">
+
+    <a
+    href="/edit/{{ application.id }}"
+    class="edit-button">
+    ✏ Edit
+    </a>
+
+    <form
+    action="/delete/{{ application.id }}"
+    method="post">
+
+    <button
+        type="submit"
+        class="delete-button">
+
+        🗑 Delete
+
+    </button>
+
+   </form>
+
+  </div>
+
+</div>
+{% endfor %}
+</div>
+</body>
+</html>
