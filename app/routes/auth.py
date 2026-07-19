@@ -40,6 +40,9 @@ def login_user(
     password: str = Form(...)
 
 ):
+    username = username.strip()
+    print(f"Username received: '{username}'")
+    print(f"Password length: {len(password)}")
     db = SessionLocal()
 
     user = db.query(User).filter(
