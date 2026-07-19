@@ -204,7 +204,7 @@ This project helped me gain experience with:
 
 ### How It Works
 
-![How It Works](app/static/images/how-it-works.png)
+![How It Works](app/static/images/how_it_works.png)
 
 ---
 
