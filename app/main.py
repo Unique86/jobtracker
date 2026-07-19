@@ -7,13 +7,16 @@ from app.database import Base, engine
 from app.routes.applications import router as application_router
 from app.routes.auth import router as auth_router
 from starlette.middleware.sessions import SessionMiddleware
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 app = FastAPI(title="Job Tracker")
 
 app.add_middleware(
     SessionMiddleware,
-    secret_key="change-this-to-a-long-random-secret-key"
+    secret_key=os.getenv("SECRET_KEY")
 )
 
 

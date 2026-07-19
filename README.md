@@ -6,6 +6,12 @@ This project demonstrates backend development skills by building a secure multi-
 
 ---
 
+## Preview
+
+![Landing Page](app/static/images/Landing_page.png)
+
+---
+
 ## Features
 
 ### Authentication & Security
@@ -35,6 +41,7 @@ This project demonstrates backend development skills by building a secure multi-
 - ✅ Redirect after Creating an Application
 - ✅ Redirect after Editing an Application
 - ✅ Redirect after Deleting an Application
+- ✅ Responsive Design
 
 ---
 
@@ -49,6 +56,78 @@ This project demonstrates backend development skills by building a secure multi-
 - CSS3
 - Passlib (bcrypt)
 - Starlette Sessions
+- Python-dotenv
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Unique86/job-tracker.git
+```
+
+Navigate into the project:
+
+```bash
+cd job-tracker
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate the virtual environment.
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file in the project root:
+
+```text
+SECRET_KEY=your_secret_key_here
+```
+
+Run the application:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Open your browser and visit:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Usage
+
+1. Register a new account.
+2. Log in securely.
+3. Add job applications.
+4. Edit existing applications.
+5. Delete applications.
+6. Track your job search from your personal dashboard.
 
 ---
 
@@ -56,10 +135,10 @@ This project demonstrates backend development skills by building a secure multi-
 
 ### Dashboard
 - [ ] Statistics Cards
-    - Total Applications
-    - Interviews
-    - Offers
-    - Rejections
+  - Total Applications
+  - Interviews
+  - Offers
+  - Rejections
 
 ### Search & Filtering
 - [ ] Search by Company
@@ -67,7 +146,6 @@ This project demonstrates backend development skills by building a secure multi-
 - [ ] Sort by Date
 
 ### User Experience
-- [ ] Responsive Design
 - [ ] Status Badges
 - [ ] Better Dashboard Layout
 - [ ] Success & Error Messages
@@ -86,23 +164,56 @@ This project demonstrates backend development skills by building a secure multi-
 
 This project helped me gain experience with:
 
-- Building RESTful applications with FastAPI
+- Building RESTful web applications using FastAPI
 - SQLAlchemy ORM and database relationships
-- User authentication and password hashing
+- User authentication and secure password hashing
 - Session-based authentication
 - Route protection and authorization
 - CRUD operations
+- Organizing larger FastAPI projects
 - Refactoring duplicated code into reusable helpers
-- Organizing a larger FastAPI project
+- Writing cleaner, production-ready code
 
 ---
 
 ## Screenshots
 
-*Coming Soon*
+### Landing Page
+
+![Landing Page](app/static/images/Landing_page.png)
+
+### Dashboard
+
+![Dashboard](app/static/images/Dashboard.png)
+
+### Add Application
+
+![Add Application](app/static/images/add-application.png)
+
+### Login
+
+![Login](app/static/images/login.png)
+
+### Register
+
+![Register](app/static/images/Register.png)
+
+### Features
+
+![Features](app/static/images/Features.png)
+
+### How It Works
+
+![How It Works](app/static/images/how-it-works.png)
 
 ---
 
 ## License
 
 MIT
+
+---
+
+## Version
+
+**Current Release:** v1.0.0
