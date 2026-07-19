@@ -9,9 +9,6 @@ engine = create_engine(
     connect_args={"check_same_thread": False}
 )
 
-print("Current working directory:", os.getcwd())
-print("Database URL:", DATABASE_URL)
-print("Database absolute path:", os.path.abspath("jobtracker.db"))
 
 SessionLocal = sessionmaker(
     autocommit=False,
